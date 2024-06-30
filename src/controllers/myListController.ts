@@ -6,7 +6,7 @@ import { IWishlist, IWishlistItem } from '../models/wishList';
 @Controller('mylist')
 export class MyListController {
   constructor(
-    private readonly myListService: MyListService
+    private myListService: MyListService
   ) {}
 
  
