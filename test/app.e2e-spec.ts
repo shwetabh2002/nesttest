@@ -7,7 +7,7 @@ import { Model } from 'mongoose';
 import { getModelToken } from '@nestjs/mongoose';
 import { Movie } from 'src/models/movie';
 import { User } from 'src/models/user';
-console.log("0");
+// console.log("0");
 describe('AppController (e2e)', () => {
   // console.log("1");
   let app: INestApplication;
