@@ -90,8 +90,5 @@ describe('AppController (e2e)', () => {
     expect(response.text).toBe('You have not added anything in your wishlist');
   });
 
-  afterAll(async () => {
-    process.exit(0);
-  });
 
 });
