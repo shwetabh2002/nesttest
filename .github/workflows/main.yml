@@ -38,9 +38,3 @@ jobs:
 
       - name: Build and Test
         run: npm run test:e2e
-
-      - name: Deploy to Production
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: |
-          # Add your deployment script or commands here
-          npm run start:prod
