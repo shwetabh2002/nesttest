@@ -15,7 +15,7 @@ describe('AppController (e2e)', () => {
   let userModel: Model<User>;
   let movieModel: Model<Movie>;
 
-  beforeEach(async () => {
+  beforeAll(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
       imports: [AppModule], 
     }).compile();  
@@ -29,6 +29,9 @@ describe('AppController (e2e)', () => {
     movieModel = moduleFixture.get<Model<Movie>>(getModelToken('Movie'));
   });
 
+  afterAll(async () => {
+      process.exit(0); 
+  });
   
   it('should add an item to the wishlist', async () => {
     const movies = await movieModel.find();
