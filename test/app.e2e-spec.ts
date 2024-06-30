@@ -17,8 +17,8 @@ describe('AppController (e2e)', () => {
 
   beforeAll(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [AppModule], 
-    }).compile();  
+      imports: [AppModule],
+    }).compile();
 
 
     app = moduleFixture.createNestApplication();
@@ -29,16 +29,14 @@ describe('AppController (e2e)', () => {
     movieModel = moduleFixture.get<Model<Movie>>(getModelToken('Movie'));
   });
 
-  afterAll(async () => {
-      process.exit(0); 
-  });
-  
+
+
   it('should add an item to the wishlist', async () => {
     const movies = await movieModel.find();
     expect(movies).toBeDefined();
     expect(movies.length).toBeGreaterThan(0);
 
-    const randomMovie = movies[movies.length-1];
+    const randomMovie = movies[movies.length - 1];
 
     const response = await request(app.getHttpServer())
       .post('/mylist/add')
@@ -91,4 +89,9 @@ describe('AppController (e2e)', () => {
     expect(response.status).toBe(200);
     expect(response.text).toBe('You have not added anything in your wishlist');
   });
+
+  afterAll(async () => {
+    process.exit(0);
+  });
+
 });
