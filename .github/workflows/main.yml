@@ -16,8 +16,8 @@ jobs:
         ports:
           - 27017:27017
 
-    # env:
-    #   MONGO_URI: mongodb://localhost:27017
+    env:
+      MONGO_URI: mongodb://localhost:27017
       
     steps:
       - name: Checkout repository
