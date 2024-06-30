@@ -29,7 +29,9 @@ describe('AppController (e2e)', () => {
     movieModel = moduleFixture.get<Model<Movie>>(getModelToken('Movie'));
   });
 
-
+  afterAll(async () => {
+    await app.close();
+  });
 
   it('should add an item to the wishlist', async () => {
     const movies = await movieModel.find();
