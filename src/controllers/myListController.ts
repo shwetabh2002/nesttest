@@ -1,5 +1,5 @@
 import { MyListService } from '../services/myListService';
-import { Controller, Get, Post, Delete, Body, Query, NotFoundException, Req, Res } from '@nestjs/common';
+import { Controller, Get, Post, Delete, Body, Query, NotFoundException} from '@nestjs/common';
 import { IWishlist, IWishlistItem } from '../models/wishList';
 
 
