@@ -12,7 +12,6 @@ describe('AppController (e2e)', () => {
   // console.log("1");
   let app: INestApplication;
   let wishlistModel: Model<Wishlist>;
-  let userModel: Model<User>;
   let movieModel: Model<Movie>;
 
   beforeAll(async () => {
@@ -25,7 +24,6 @@ describe('AppController (e2e)', () => {
     await app.init();
 
     wishlistModel = moduleFixture.get<Model<Wishlist>>(getModelToken('Wishlist'));
-    userModel = moduleFixture.get<Model<User>>(getModelToken('User'));
     movieModel = moduleFixture.get<Model<Movie>>(getModelToken('Movie'));
   });
 
