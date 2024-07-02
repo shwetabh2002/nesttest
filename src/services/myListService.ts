@@ -5,6 +5,7 @@ import { User, IUser } from '../models/user';
 import { Movie, IMovie } from '../models/movie';
 import { Wishlist, IWishlistItem, IWishlist } from '../models/wishList';
 import { TvShow, ITvShow } from '../models/tvShow';
+import { CreateWishlistDto } from 'src/dtos/wishlistdto';
 
 @Injectable()
 export class MyListService {
@@ -15,7 +16,7 @@ export class MyListService {
     @InjectModel(TvShow.name) private tvShowModel: Model<ITvShow>,
   ) {}
 
-  async addToMyList(userId: string, listItem: IWishlistItem): Promise<void> {
+  async addToMyList(userId: string, listItem: CreateWishlistDto): Promise<void> {
     const user = await this.userModel.findById(userId);
     if (!user) {
       throw new NotFoundException('User not found');
