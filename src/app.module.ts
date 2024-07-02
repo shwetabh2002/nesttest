@@ -22,6 +22,7 @@ import { WishlistSchema } from './models/wishList';
       {name: 'Wishlist', schema: WishlistSchema}])
   ],
   controllers: [MyListController],      
-  providers: [MyListService],
+  providers: [MyListService,MyListController],
+  exports: [MyListService, MyListController, MongooseModule, ConfigModule],
 })
 export class AppModule {}
