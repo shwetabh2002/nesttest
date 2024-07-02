@@ -1,7 +1,7 @@
 import { MyListService } from '../services/myListService';
 import { Controller, Get, Post, Delete, Body, Query, NotFoundException, ValidationPipe, UsePipes} from '@nestjs/common';
 import { IWishlist, IWishlistItem } from '../models/wishList';
-import { CreateWishlistDto } from 'src/dtos/wishlistdto';
+import { CreateWishlistDto } from '../dtos/wishlistdto';
 
 
 @Controller('mylist')
