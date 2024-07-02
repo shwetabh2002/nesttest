@@ -7,6 +7,7 @@ import { Model } from 'mongoose';
 import { getModelToken } from '@nestjs/mongoose';
 import { Movie } from 'src/models/movie';
 import { User } from 'src/models/user';
+import { testModule } from './test.module';
 // console.log("0");
 describe('AppController (e2e)', () => {
   // console.log("1");
@@ -16,7 +17,7 @@ describe('AppController (e2e)', () => {
 
   beforeAll(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [AppModule],
+      imports: [testModule],
     }).compile();
 
 
